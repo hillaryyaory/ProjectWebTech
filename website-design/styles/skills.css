@@ -1,0 +1,93 @@
+  html {
+      height: 400px;
+      background: linear-gradient(to right, #ff9999 0%, #ffcc99, #ffffcc, #ccffcc 100%);
+  }
+  /* this is the navigation bar*/
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;  
+      color: black;
+    }
+    nav{
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      font-family: "Lucida Console", "Courier New", monospace;
+    }
+    nav ul{
+      float: right;
+      margin-right: 30px;
+    }
+    nav ul li{
+      list-style-type: none;
+      display: inline-block;
+    }
+    nav ul li:hover{
+      background-color: white;
+    }
+    nav ul li a{
+      text-decoration: none;
+      padding: 30px;
+    }
+  
+  /*footer*/  
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    color: black;
+    }
+  footer ul li{
+    list-style-type: none;
+    display: inline-block;
+  }
+/* this is the buttons*/
+.button {
+    background: linear-gradient(to bottom right, #ccffcc, lightblue);
+    border: 0;
+    border-radius: 12px;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 2.5;
+    outline: transparent;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    width:60%;
+    margin-top: 40px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin-bottom: 100px;
+} 
+a:link {
+    color: black;
+    text-decoration: none;
+  } 
+a:visited {
+    color: black;
+    text-decoration: none;
+  } 
+/* this is the table */
+table {
+    font-family: arial;
+}
+  table.center {
+    margin-top: 100px;
+    margin-left: 25%; 
+    margin-right: 20%;
+  }
+tr {
+    height: 50px; 
+    vertical-align: top;
+}
+td {
+    width: 500px; 
+    padding-right: 20px;
+}
+th {
+    text-align: left;
+}
