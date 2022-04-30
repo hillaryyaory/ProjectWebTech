@@ -98,23 +98,6 @@ table.luke {
     </tr>
 </table>
 
-<script>
-    var myIndex = 0;
-    carousel();
-    
-    function carousel() {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
-      }
-      myIndex++;
-      if (myIndex > x.length) {myIndex = 1}    
-      x[myIndex-1].style.display = "block";  
-      setTimeout(carousel, 2000); // Change image every 2 seconds
-    }
-    </script>
-
 <!-- Table 2 Bliss in a box-->
 <table class="center">
     <tr>
@@ -126,23 +109,6 @@ table.luke {
         </td>
     </tr>
 </table>
-
-<script>
-    var myIndex = 0;
-    testing();
-    
-    function testing() {
-      var i;
-      var x = document.getElementsByClassName("bliss");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
-      }
-      myIndex++;
-      if (myIndex > x.length) {myIndex = 1}    
-      x[myIndex-1].style.display = "block";  
-      setTimeout(testing, 2000); // Change image every 2 seconds
-    }
-    </script>
 <br>
 <br>
 <!-- Luke's Lobster-->
@@ -175,43 +141,6 @@ table.luke {
     </tr>
 </table>
 
-<!-- Jemi -->
-<h1 class="Jemi">Jemi</h1>
-<p> At Jemi I worked as a UI/UX designer. I created website templates for our users to use. I worked on creating E-commerce, Landing pages, and Portfolio among other things.
-</p> 
-<br>
-<br>
-<p2>Websites I've created!</p2>
-<table class="luke">
-    <tr>
-        <td>
-            <iframe src="https://jemi.so/bloom-demo" style="height:400px;width:500px" title="Iframe Example"></iframe>
-        </td>
-        <td>
-            <iframe src="https://jemi.so/thepastabar-demo" style="height:400px;width:500px" title="Iframe Example"></iframe>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <iframe src="https://jemi.so/gelateau-demo" style="height:400px;width:500px" title="Iframe Example"></iframe>
-        </td>
-        <td>
-            <iframe src="https://jemi.so/hillary-demo" style="height:400px;width:500px" title="Iframe Example"></iframe>
-
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <iframe src="https://jemi.so/sky-demo" style="height:400px;width:500px" title="Iframe Example"></iframe>
-        </td>
-        <td>
-            <iframe src="https://jemi.so/aluisa-demo" style="height:400px;width:500px" title="Iframe Example"></iframe>
-
-        </td>
-    </tr>
-
-</table>
-
 <br>
 <br>
 <br>
@@ -239,4 +168,36 @@ table.luke {
     </ul>
   </footer>
 </body>
+<script>
+    /* first carousel animation*/
+    let myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      let i;
+      let x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+
+    /* second animation*/
+    testing();
+    
+    function testing() {
+      let i;
+      let x = document.getElementsByClassName("bliss");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(testing, 2000); // Change image every 2 seconds
+    }
+</script>
 </html>
