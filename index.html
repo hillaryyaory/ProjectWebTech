@@ -6,11 +6,28 @@
     <meta name="Hillary Yaory" content="Hillary Yaory's website's homepage">
     <title>Hillary Yaory's project version 1</title>
     <link rel="stylesheet" href="styles/project1.css" />
+    <link rel="stylesheet" href="styles/goals.css" />
 </head>
+<style>
+h1 {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 60px;
+}
+p {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+h2 {
+    margin-left: 20%;
+    margin-right: 30%;
+    font-size: 30px;
+}
+</style>
 <body>
 <!-- navigation bar-->
         <nav>
-            <img src="images/hy.png" alt="white icon" height="60">
+            <img src="images/hy.png" title="hillary yaory" alt="white icon" height="60">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="work.html">Work</a></li>
@@ -19,12 +36,76 @@
                 <li><a href="me.html">Me</a></li>
             </ul>
         </nav>
-    <img src="images/hellocolorful.gif" title="hello" alt="hello gif" height="300" class="hello">
+    <img src="images/hellocolorful.gif" title="hello" alt="hello gif" height="300" class="hello" id="helloColors">
 <br>
-<center>
-    I'm Hillary Yaory! I'm a digital product designer! I create art, clothes, and much more!
-</center>
+<h1 id="myH1">
+    I'm Hillary Yaory! I design and grow products that people love. I've had a blast designing art, clothes, and much more!
+</h1>
+<h2>Things I've created:</h2>
 
+    <!--slideshow-->
+
+    <div class="container">
+        <div class="mySlides">
+          <div class="numbertext">1 / 6</div>
+          <img src="images/chinesenewyear.webp" style="width: 100%">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">2 / 6</div>
+          <img src="images/kado.webp" style="width: 100%">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">3 / 6</div>
+          <img src="images/blissinabox1.webp" style="width: 100%">
+        </div>
+          
+        <div class="mySlides">
+          <div class="numbertext">4 / 6</div>
+          <img src="images/lanyard.webp" style="width: 100%">
+        </div>
+      
+        <div class="mySlides">
+          <div class="numbertext">5 / 6</div>
+          <img src="images/thenostalgicset.webp" style="width: 100%">
+        </div>
+          
+        <div class="mySlides">
+            <div class="numbertext">6 / 6</div>
+            <img src="images/festivitybox1.webp" style="width: 100%">
+          </div>
+          
+          
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+      
+        <div class="row">
+          <div class="column">
+            <img class="demo cursor" src="images/chinesenewyear.webp" style="width:100%" onclick="currentSlide(1)" alt="The Reunion Set">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="images/kado.webp" style="width:100%" onclick="currentSlide(2)" alt="The Milestone Set">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="images/blissinabox1.webp" style="width:100%" onclick="currentSlide(3)" alt="Bliss in a box">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="images/lanyard.webp" style="width:100%" onclick="currentSlide(4)" alt="Leather Set">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="images/thenostalgicset.webp" style="width:100%" onclick="currentSlide(5)" alt="The Nostalgic Set">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="images/festivitybox1.webp" style="width:100%" onclick="currentSlide(6)" alt="Festivity Box">
+          </div>        
+        </div>
+      </div>
+      
 <br>
 <br>
 <br>
@@ -52,4 +133,54 @@
     </ul>
   </footer>
 </body>
+<script>
+    const player = document.getElementById("helloColors");
+
+    function mouseOver() {
+        player.src = "images/helloBear.gif";
+    }
+    document.getElementById("helloColors").addEventListener("mouseover", mouseOver);
+
+    function mouseOut() {
+        player.src = "images/hellocolorful.gif"
+    }
+    document.getElementById("helloColors").addEventListener("mouseout", mouseOut);
+
+    function colorChange() {
+    document.getElementById("myH1").style.color = "white";
+    }
+    document.getElementById("myH1").onclick = function() {
+      colorChange();
+    };
+
+/* this is for the slideshow */
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+</script>
 </html>
