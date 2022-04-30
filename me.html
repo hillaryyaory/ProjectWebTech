@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="Hillary Yaory" content="About Hillary Yaory">
     <title>Hillary Yaory's Me page</title>
+    <link rel="stylesheet" href="styles/project1.css" />
     <link rel="stylesheet" href="styles/me.css" />
 </head>
 <body>
@@ -32,17 +33,15 @@
             I'm interested in going into the technology field as a product manager, data analyst, or data scientist.  
             This summer I will be interning at CME Group as a IT Business Analyst in their Shared Services Analysis Team.
         <br>
-        <br>
         However, I'm really interested in product design. I enjoy working with adobe photoshop, canva, and procreate among other things.
         In my free time, I spend a lot of time just designing clothes and learning new artistic tools. 
         </td>
-
 </tr>
 
 </table>
 
 <!-- the form-->
-<h1>Reach out to me!</h1>
+<h1 class="center" id="heading">Reach out to me!</h1>
 
 <form action="https://oim-apis.herokuapp.com/form2" method="post">
 <fieldset>
@@ -72,30 +71,8 @@
         <div>
          <textarea id="comments" name="comments" rows="3" cols="35" placeholder="Write something!"></textarea>
         </div>
-</fieldset>
-<fieldset>
-    <legend>Your Feedback:</legend>
-       <div>
-           What do you think of my website?
-           <div>
-           <label for="Good">
-            <input type="radio" name="rating" value="Good" />
-           </label>Good
-           <label for="Average"> 
-           <input type="radio" name="rating" value="Average" />
-           </label> Average
-           <label for="Bad"> 
-           <input type="radio" name="rating" value="Bad" />
-           </label> Bad
-           </div>
-       </div>
-       <div>
-        <textarea id="feedback" name="feedback" rows="3" cols="35" placeholder="Help me improve my website!"></textarea>
-       </div>
-       <div>
-        <input type="Submit" value="Submit" />
-        <input type="Reset" value="Reset" />
-     </div>
+        <input name="submit" type="button" value="Submit" id="submit-btn" />
+        <input name="reset" type="reset" value="Clear" />
 </fieldset>
 </form>
 
@@ -126,4 +103,26 @@
     </ul>
   </footer>
 </body>
+<script>
+function change(){
+  document.getElementById("heading").innerHTML = "I don't bite."
+}
+document.getElementById("heading").onclick = change;
+
+function display() {
+      const myForm = document.querySelector("form");
+      const fullName = myForm["name-input"].value;
+      const topic = myForm.topic.value;
+      const email = myForm["email-input"].value;
+
+    if (fullName.length === 0 || email.length === 0) {
+        alert("You did not finish the form yet!");
+    } else {
+        alert("You finished the form.");
+    }
+    document.getElementById("submit-btn").onclick = function() {
+      display();
+    };
+}
+  </script>
 </html>
