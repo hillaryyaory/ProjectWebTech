@@ -43,33 +43,31 @@
 <!-- the form-->
 <h1 class="center" id="heading">Reach out to me!</h1>
 
-<form action="https://oim-apis.herokuapp.com/form2" method="post">
+<form action="" method="post" id="form-feedback">
 <fieldset>
         <legend>Your Information:</legend>
     <div>
-   <label for="Name-input">Name:</label>
-   <input type="text"  placeholder="Enter your name here" name="Name" id="name-input"/>
+   <label>Name: <input type="text" placeholder="Enter your name here" name="Name" id="name-input"/></label>
    </div>
    <div>
-    <label for="Email-input">Email: </label>
-    <input type="text" placeholder="Enter your email here" name="Email" id="email-input" />
+    <label>Email: <input type="text" placeholder="Enter your email here" name="Email" id="email-input" /></label>
     </div>
 </fieldset>
 <fieldset>
        <legend>Contact Me:</legend>
-       <div>
-        <label for="topic-select">Topic:</label>
-            <select name="topic" id="topic-select"> 
+        <label for="topic-select">Topic:
+        <select name="topic" id="topic-select"> 
             <option value="Work">Work</option>
-            <option value="Learn More">Learn More</option>
+            <option value="LearnMore">Learn More</option>
             <option value="Fun">Fun</option>
         </select>
-        </div>
+        </label>
         <div>
-         <label for="comments">Comments:</label>
-        </div>
+         <label for="comments">Comments:
         <div>
          <textarea id="comments" name="comments" rows="3" cols="35" placeholder="Write something!"></textarea>
+        </div>
+        </label>
         </div>
         <input name="submit" type="button" value="Submit" id="submit-btn" />
         <input name="reset" type="reset" value="Clear" />
@@ -109,20 +107,18 @@ function change(){
 }
 document.getElementById("heading").onclick = change;
 
-function display() {
-      const myForm = document.querySelector("form");
-      const fullName = myForm["name-input"].value;
-      const topic = myForm.topic.value;
-      const email = myForm["email-input"].value;
+const myForm = document.getElementById("form-feedback");
 
-    if (fullName.length === 0 || email.length === 0) {
-        alert("You did not finish the form yet!");
-    } else {
-        alert("You finished the form.");
+function display() {
+let comments = myForm["comments"].value;
+
+if (comments.length === 0) {
+          alert("You did not enter anything!");
+        } else {
+          alert("Thanks for entering your comment!");
+        }
     }
-    document.getElementById("submit-btn").onclick = function() {
-      display();
-    };
-}
+    document.querySelector("#submit-btn").onclick = display;
+
   </script>
 </html>
